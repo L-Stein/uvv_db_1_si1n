@@ -1,2 +1,3 @@
-# uvv_db_1_si1n
-Problem set Q4 2022
+# PSet1 Q4 2022
+Lucas Stein, SI1N.
+Professor Abrantes Araujo Silva Filho.
