@@ -1,1 +1,7 @@
-[Logs]
+PSet 1, Q4 2022.
+Ao criar o arquivo DDL através do PowerArchitect, fui solicitado com esta tela de erro: https://imgur.com/a/b7BIbB
+Clicar em "Ignorar todos os avisos" criou um script PostgreSQL que funcionou, apesar das mensagens de erro.
+
+Depois de criar um usuário PostgreSQL, adicionar esses comandos ao script e dar ao usuário as permissões adequadas, usando search and replace, renomei todas as instruções HR Oracle para que o arquivo popul.sql funcionasse com PostgreSQL.
+
+Eu usei Git para atualizar o projeto, embora os arquivos finais estejam marcados como "Uploaded". Esses arquivos foram carregados de um computador diferente.
