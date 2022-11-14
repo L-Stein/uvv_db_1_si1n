@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <architect-project version="1.0" appversion="1.0.9">
- <project-name>SI1N_202202859_HR</project-name>
+ <project-name>ArchAlteration</project-name>
  <print-settings numCopies="1" zoom="1.0" pageNumbersPrinted="true" orientation="1" paperWidth="612.0" paperHeight="792.0" leftBorder="50.0" rightBorder="50.0" topBorder="50.0" bottomBorder="50.0" />
  <project-data-sources>
   <data-source id="DS0">
@@ -180,8 +180,8 @@
     <column id="COL52" populated="true" UUID="d89f495f-da3e-4b9a-a814-0fc6845b4d87" autoIncrement="false" autoIncrementSequenceName="empregados_id_departamento_seq" defaultValue="" name="id_departamento" nullable="0" physicalName="id_departamento" precision="0" referenceCount="2" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks>Identificador e chave estrangeira da tabela &quot;departamentos&quot;.</remarks>
     </column>
-    <column id="COL53" populated="true" UUID="032ac64f-2143-49c9-afa8-e3c044616b97" autoIncrement="false" autoIncrementSequenceName="empregados_id_supervisoer_seq" defaultValue="" name="id_supervisor" nullable="1" physicalName="id_supervisoer" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
-     <remarks></remarks>
+    <column id="COL53" populated="true" UUID="032ac64f-2143-49c9-afa8-e3c044616b97" autoIncrement="false" autoIncrementSequenceName="empregados_id_supervisor_seq" defaultValue="" name="id_supervisor" nullable="0" physicalName="id_supervisor" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks>Identificador e chave estrangeira da linha &quot;id_empregado&quot;.</remarks>
     </column>
     </folder>
     <folder id="FOLTAB433" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
@@ -245,18 +245,21 @@
    <relationship id="REL77" populated="true" UUID="883fe4da-0351-4f15-95b2-84029a0dbcd5" deferrability="7" deleteRule="3" fk-table-ref="TAB34" fkCardinality="7" identifying="true" name="empregados_historico_cargos_fk" physicalName="empregados_historico_cargos_fk" pk-table-ref="TAB43" pkCardinality="2" updateRule="3" >
     <column-mapping id="CMP78" populated="true" UUID="87e5d707-0df0-4d68-961d-de7ad397f07b" fk-column-ref="COL35" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL44" />
    </relationship>
-   <relationship id="REL79" populated="true" UUID="7a2dcaa8-8058-470d-a516-e963eb66b72f" deferrability="7" deleteRule="3" fk-table-ref="TAB43" fkCardinality="7" identifying="false" name="cargos_empregados_fk" physicalName="cargos_empregados_fk" pk-table-ref="TAB58" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP80" populated="true" UUID="18af673c-3228-41df-9911-2a6f15641945" fk-column-ref="COL49" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL59" />
+   <relationship id="REL79" populated="true" UUID="c0a76fe4-ce80-4f04-b079-5d7b79e2efc3" deferrability="7" deleteRule="3" fk-table-ref="TAB43" fkCardinality="7" identifying="false" name="empregados_empregados_fk" physicalName="empregados_empregados_fk" pk-table-ref="TAB43" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP80" populated="true" UUID="1ebdedf4-61cb-44e2-a1c2-80f7db905dd4" fk-column-ref="COL53" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL44" />
    </relationship>
-   <relationship id="REL81" populated="true" UUID="63892d33-42fe-4383-b346-64ae7c136613" deferrability="7" deleteRule="3" fk-table-ref="TAB34" fkCardinality="7" identifying="false" name="cargos_historico_cargos_fk" physicalName="cargos_historico_cargos_fk" pk-table-ref="TAB58" pkCardinality="2" updateRule="3" >
-    <column-mapping id="CMP82" populated="true" UUID="bef3cd0e-954d-4bf0-a100-d0bad3540a49" fk-column-ref="COL38" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL59" />
+   <relationship id="REL81" populated="true" UUID="7a2dcaa8-8058-470d-a516-e963eb66b72f" deferrability="7" deleteRule="3" fk-table-ref="TAB43" fkCardinality="7" identifying="false" name="cargos_empregados_fk" physicalName="cargos_empregados_fk" pk-table-ref="TAB58" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP82" populated="true" UUID="18af673c-3228-41df-9911-2a6f15641945" fk-column-ref="COL49" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL59" />
+   </relationship>
+   <relationship id="REL83" populated="true" UUID="63892d33-42fe-4383-b346-64ae7c136613" deferrability="7" deleteRule="3" fk-table-ref="TAB34" fkCardinality="7" identifying="false" name="cargos_historico_cargos_fk" physicalName="cargos_historico_cargos_fk" pk-table-ref="TAB58" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP84" populated="true" UUID="bef3cd0e-954d-4bf0-a100-d0bad3540a49" fk-column-ref="COL38" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL59" />
    </relationship>
   </relationships>
  </target-database>
  <ddl-generator type="ca.sqlpower.architect.ddl.PostgresDDLGenerator" allow-connection="false" target-schema="hr"> </ddl-generator>
  <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
  <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
- <play-pen zoom="0.8408964152537145" viewportX="0" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
+ <play-pen zoom="0.8408964152537145" viewportX="0" viewportY="59" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
   <table-pane table-ref="TAB1" x="41" y="22" bgColor="0xb9bbf6" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB8" x="39" y="265" bgColor="0xb9bbf6" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB16" x="378" y="22" bgColor="0xb9bbf6" fgColor="0x000000" rounded="false" dashed="false"/>
@@ -264,14 +267,15 @@
   <table-pane table-ref="TAB34" x="749" y="265" bgColor="0xbfd6ff" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB43" x="378" y="445" bgColor="0xfbdabb" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB58" x="749" y="566" bgColor="0xbfd6ff" fgColor="0x000000" rounded="false" dashed="false"/>
-  <table-link relationship-ref="REL67" pkConnection="0.496551724137931" fkConnection="0.503448275862069" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="132"/>
+  <table-link relationship-ref="REL67" pkConnection="0.49473684210526314" fkConnection="0.5017543859649123" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="132"/>
   <table-link relationship-ref="REL69" pkConnection="0.36363636363636365" fkConnection="0.9259259259259259" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="33"/>
-  <table-link relationship-ref="REL71" pkConnection="0.49838187702265374" fkConnection="0.46808510638297873" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="132"/>
-  <table-link relationship-ref="REL73" pkConnection="0.49848024316109424" fkConnection="0.49848024316109424" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="132"/>
-  <table-link relationship-ref="REL79" pkConnection="0.5" fkConnection="0.7357723577235772" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="18"/>
+  <table-link relationship-ref="REL71" pkConnection="0.5" fkConnection="0.46808510638297873" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="132"/>
+  <table-link relationship-ref="REL73" pkConnection="0.49848024316109424" fkConnection="0.45054945054945056" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="132"/>
+  <table-link relationship-ref="REL81" pkConnection="0.5" fkConnection="0.6779026217228464" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="18"/>
   <table-link relationship-ref="REL75" pkConnection="0.5" fkConnection="0.425531914893617" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="33"/>
   <table-link relationship-ref="REL77" pkConnection="0.13821138211382114" fkConnection="0.44984802431610943" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="65"/>
-  <table-link relationship-ref="REL81" pkConnection="0.6103448275862069" fkConnection="0.5379939209726444" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="72"/>
+  <table-link relationship-ref="REL83" pkConnection="0.6293706293706294" fkConnection="0.5487804878048781" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="72"/>
+  <table-link relationship-ref="REL79" pkConnection="0.46504559270516715" fkConnection="0.14634146341463414" rLineColor="0x2e3436" pkLabelText="" fkLabelText="" orientation="36"/>
  </play-pen>
  <critic-manager>
   <critic-grouping platformType="Generic" enabled="true">
