@@ -53,7 +53,7 @@ CREATE UNIQUE INDEX regioes_idx
 CREATE TABLE hr.paises (
                 id_pais CHAR(2) NOT NULL,
                 nome VARCHAR(50) NOT NULL,
-                id_regiao INTEGER,
+                id_regiao INTEGER, NOT NULL,
                 CONSTRAINT id_pais PRIMARY KEY (id_pais)
 );
 COMMENT ON TABLE hr.paises IS '"paises" table, parent of "localizacoes".';
@@ -72,7 +72,7 @@ CREATE TABLE hr.localizacoes (
                 cep VARCHAR(12),
                 cidade VARCHAR(50),
                 uf VARCHAR(25),
-                id_pais CHAR(2),
+                id_pais CHAR(2) NOT NULL,
                 CONSTRAINT id_localizacao PRIMARY KEY (id_localizacao)
 );
 COMMENT ON TABLE hr.localizacoes IS '"localizacoes" table, parent of "departamentos".';
@@ -82,8 +82,8 @@ COMMENT ON COLUMN hr.localizacoes.id_pais IS 'Identificador e chave estrangeira 
 
 CREATE TABLE hr.departamentos (
                 id_departamento INTEGER NOT NULL,
-                nome VARCHAR(50),
-                id_localizacao INTEGER,
+                nome VARCHAR(50) NOT NULL,
+                id_localizacao INTEGER NOT NULL,
                 id_gerente INTEGER,
                 CONSTRAINT id_departamento_ PRIMARY KEY (id_departamento)
 );
@@ -106,8 +106,8 @@ CREATE TABLE hr.empregados (
                 id_cargo INTEGER NOT NULL,
                 salario NUMERIC(8,2),
                 comissao NUMERIC(4,2),
-                id_departamento INTEGER,
-                id_supervisor INTEGER,
+                id_departamento INTEGER NOT NULL,
+                id_supervisor INTEGER NOT NULL,
                 CONSTRAINT id_empregado PRIMARY KEY (id_empregado)
 );
 COMMENT ON TABLE hr.empregados IS '"empregados" table, 1:N relationship with "departamentos", and cargos"';
@@ -127,7 +127,7 @@ CREATE TABLE hr.historico_cargos (
                 data_inicial DATE NOT NULL,
                 data_final DATE NOT NULL,
                 id_cargo INTEGER NOT NULL,
-                id_departamento INTEGER,
+                id_departamento INTEGER NOT NULL,
                 CONSTRAINT data_inicial PRIMARY KEY (id_empregado, data_inicial)
 );
 COMMENT ON TABLE hr.historico_cargos IS '"historico_cargos" table, 1:N relationship with "departamentos", "empregados", and "cargos"';

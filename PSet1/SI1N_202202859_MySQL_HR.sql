@@ -47,7 +47,7 @@ CREATE UNIQUE INDEX regioes_idx
 CREATE TABLE paises (
                 id_pais CHAR(2) NOT NULL,
                 nome VARCHAR(50) NOT NULL,
-                id_regiao INT,
+                id_regiao INT NOT NULL,
                 PRIMARY KEY (id_pais)
 );
 
@@ -70,7 +70,7 @@ CREATE TABLE localizacoes (
                 cep VARCHAR(12),
                 cidade VARCHAR(50),
                 uf VARCHAR(25),
-                id_pais CHAR(2),
+                id_pais CHAR(2) NOT NULL,
                 PRIMARY KEY (id_localizacao)
 );
 
@@ -83,8 +83,8 @@ ALTER TABLE localizacoes MODIFY COLUMN id_pais CHAR(2) COMMENT 'Identificador e 
 
 CREATE TABLE departamentos (
                 id_departamento INT NOT NULL,
-                nome VARCHAR(50),
-                id_localizacao INT,
+                nome VARCHAR(50) NOT NULL,
+                id_localizacao INT NOT NULL,
                 id_gerente INT,
                 PRIMARY KEY (id_departamento)
 );
@@ -111,8 +111,8 @@ CREATE TABLE empregados (
                 id_cargo INT NOT NULL,
                 salario DECIMAL(8,2),
                 comissao DECIMAL(4,2),
-                id_departamento INT,
-                id_supervisor INT,
+                id_departamento INT NOT NULL,
+                id_supervisor INT NOT NULL,
                 PRIMARY KEY (id_empregado)
 );
 
@@ -138,7 +138,7 @@ CREATE TABLE historico_cargos (
                 data_inicial DATE NOT NULL,
                 data_final DATE NOT NULL,
                 id_cargo INT NOT NULL,
-                id_departamento INT,
+                id_departamento INT NOT NULL,
                 PRIMARY KEY (id_empregado, data_inicial)
 );
 
